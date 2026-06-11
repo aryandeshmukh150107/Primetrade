@@ -19,7 +19,7 @@ The application allows users to place MARKET and LIMIT orders on Binance USDT-M 
 * Connection testing utility
 
 ## Project Structure
-'''
+```
 trading_bot/
 │
 ├── bot/
@@ -32,7 +32,7 @@ trading_bot/
 ├── cli.py
 ├── requirements.txt
 └── README.md
-'''
+```
 
 ## Setup
 
