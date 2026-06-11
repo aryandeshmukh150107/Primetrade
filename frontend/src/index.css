@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-trade-bg text-trade-text font-sans antialiased;
+    background-color: #F0F3F6;
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #D1D5DB transparent;
+  }
+
+  /* Custom Scrollbar for Light theme elements */
+  *::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #D1D5DB;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background-color: #A0A5B1;
+  }
+
+
+  ::selection {
+    background-color: rgba(41, 98, 255, 0.15);
+    color: #131722;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  /* Premium border-based cards */
+  .trade-card {
+    @apply bg-white rounded-lg border border-trade-border transition-shadow duration-200;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02), 0 1px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .trade-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+  }
+
+  .trade-card-header {
+    @apply px-4 py-3 border-b border-trade-border flex items-center justify-between;
+  }
+
+  .trade-card-body {
+    @apply p-4;
+  }
+
+  /* Compact inline-labeled input containers */
+  .trade-field-group {
+    @apply relative border border-trade-border rounded px-3 py-1.5 transition-all duration-150 bg-white;
+  }
+
+  .trade-field-group:hover {
+    @apply border-trade-border-hover;
+  }
+
+  .trade-field-group:focus-within {
+    border-color: #2962FF;
+    box-shadow: 0 0 0 2px rgba(41, 98, 255, 0.12);
+  }
+
+  .trade-field-group-error {
+    border-color: #F23645 !important;
+  }
+
+  .trade-field-group-error:focus-within {
+    box-shadow: 0 0 0 2px rgba(242, 54, 69, 0.12);
+  }
+
+  .trade-field-label {
+    @apply block text-[10px] font-semibold text-trade-text-secondary uppercase tracking-wider mb-0.5 select-none;
+  }
+
+  .trade-field-input {
+    @apply w-full bg-transparent text-sm font-semibold text-trade-text placeholder-trade-text-muted focus:outline-none p-0;
+  }
+
+  /* Professional Buttons */
+  .trade-btn {
+    @apply px-4 py-2 text-sm font-semibold rounded-md transition-all duration-150
+           focus:outline-none disabled:opacity-40 disabled:cursor-not-allowed select-none;
+  }
+
+  .trade-btn-accent {
+    @apply trade-btn text-white bg-trade-accent hover:bg-trade-accent-hover active:scale-[0.98];
+  }
+
+  .trade-btn-outline {
+    @apply trade-btn bg-transparent border border-trade-border text-trade-text-secondary
+           hover:bg-trade-bg hover:text-trade-text hover:border-trade-border-hover active:scale-[0.98];
+  }
+
+  .trade-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider select-none;
+  }
+}
